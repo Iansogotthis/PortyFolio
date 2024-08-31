@@ -7,7 +7,11 @@ const ProjectCard = ({ title, imageSrc, altText, description, links }) => (
   <div className="project-card">
     <h2>{title}</h2>
     <img src={imageSrc} alt={altText} />
-    <p>{description}</p>
+    {typeof description === 'string' ? (
+      <p>{description}</p>
+    ) : (
+      description
+    )}
     {links.map((link, index) => (
       <a key={index} href={link.href} target="_blank" rel="noopener noreferrer">
         {link.text}
@@ -35,7 +39,7 @@ const Projects = ({ darkMode }) => {
       altText: "Rock Paper Scissors Screenshot",
       description: (
         <>
-          A simple HTML/CSS/JS Rock Paper Scissors variation featuring:
+          <p>A simple HTML/CSS/JS Rock Paper Scissors variation featuring:</p>
           <ol>
             <li>A clean, simple, and intuitive interface</li>
             <li>Random computer move generation</li>
@@ -54,7 +58,7 @@ const Projects = ({ darkMode }) => {
       altText: "Social Media Site Screenshot",
       description: (
         <>
-          Vibetime is a web application that allows users to share and read stories. Features include:
+          <p>Vibetime is a web application that allows users to share and read stories. Features include:</p>
           <ol>
             <li>User authentication</li>
             <li>Story sharing</li>
@@ -72,8 +76,12 @@ const Projects = ({ darkMode }) => {
       title: "Destination",
       imageSrc: "path/to/screenshot4.png",
       altText: "Task Management Tool Screenshot",
-      description: "A task management tool built with React and Firebase. It allows users to create, edit, and delete tasks, and track their progress with a user-friendly interface.",
-       links: [
+      description: (
+        <>
+          <p>A task management tool built with React and Firebase. It allows users to create, edit, and delete tasks, and track their progress with a user-friendly interface.</p>
+        </>
+      ),
+      links: [
         { href: "https://github.com/Iansogotthis/destination", text: "View on GitHub" },
         { href: "https://destination-htb7.onrender.com/", text: "Visit Site" }
       ],
@@ -82,7 +90,11 @@ const Projects = ({ darkMode }) => {
       title: "Personal Blog",
       imageSrc: "path/to/screenshot5.png",
       altText: "Personal Blog Screenshot",
-      description: "A personal blog built with Gatsby and GraphQL. It features a clean, responsive design and allows me to easily publish and manage blog posts.",
+      description: (
+        <>
+          <p>A personal blog built with Gatsby and GraphQL. It features a clean, responsive design and allows me to easily publish and manage blog posts.</p>
+        </>
+      ),
       links: [{ href: "link-to-project-repo", text: "View on GitHub" }],
     },
   ];

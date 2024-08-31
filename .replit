@@ -1,0 +1,13 @@
+modules = ["nix", "nodejs-20", "nodejs-22", "replit", "web", "nodejs-19"]
+run = "npm run start"
+
+[nix]
+channel = "stable-24_05"
+
+[deployment]
+deploymentTarget = "static"
+publicDir = "public"
+
+[[ports]]
+localPort = 3000
+externalPort = 80
