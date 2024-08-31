@@ -17,6 +17,9 @@ function Nav() {
     <li><Link to="/about" aria-label="About Me">About</Link></li>
     <li><Link to="/projects" aria-label="My Projects">Projects</Link></li>
     <li><Link to="/contact" aria-label="Contact Me">Contact</Link></li>
+    <li><Link to="/education-achievements" aria-label="Education and Achievements">Qualifications</Link></li>
+    
+    
   </ul>
 
       <button onClick={toggleDarkMode} className="toggle-button">
