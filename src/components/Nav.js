@@ -2,32 +2,32 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-function Nav() {
-  const [darkMode, setDarkMode] = useState(false);
+function Nav({ darkMode, toggleDarkMode }) {
+  const [menuOpen, setMenuOpen] = useState(false);
 
-  const toggleDarkMode = () => {
-    setDarkMode(!darkMode);
-    document.body.classList.toggle('dark-mode');
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
   };
 
   return (
-    <nav className="nav-container" aria-label="Main Navigation">
-  <ul>
-    <li><Link to="/" aria-label="Home">Home</Link></li>
-    <li><Link to="/about" aria-label="About Me">About</Link></li>
-    <li><Link to="/projects" aria-label="My Projects">Projects</Link></li>
-    <li><Link to="/contact" aria-label="Contact Me">Contact</Link></li>
-    <li><Link to="/education-achievements" aria-label="Education and Achievements">Qualifications</Link></li>
-    
-    
-  </ul>
-
-      <button onClick={toggleDarkMode} className="toggle-button">
-        {darkMode ? 'Light Mode' : 'Dark Mode'}
+    <nav className={`nav-container ${darkMode ? 'dark-mode' : ''}`}>
+      <div className="nav-content">
+        <button className="menu-toggle" onClick={toggleMenu} aria-label="Toggle menu">
+          ☰
+        </button>
+        <ul className={`nav-links ${menuOpen ? 'active' : ''}`}>
+          <li><Link to="/" onClick={() => setMenuOpen(false)}>Home</Link></li>
+          <li><Link to="/about" onClick={() => setMenuOpen(false)}>About</Link></li>
+          <li><Link to="/projects" onClick={() => setMenuOpen(false)}>Projects</Link></li>
+          <li><Link to="/contact" onClick={() => setMenuOpen(false)}>Contact</Link></li>
+          <li><Link to="/education-achievements" onClick={() => setMenuOpen(false)}>Qualifications</Link></li>
+        </ul>
+      </div>
+      <button onClick={toggleDarkMode} className="dark-mode-toggle" aria-label={darkMode ? "Switch to light mode" : "Switch to dark mode"}>
+        {darkMode ? "☀️" : "🌙"}
       </button>
     </nav>
   );
 }
 
 export default Nav;
-

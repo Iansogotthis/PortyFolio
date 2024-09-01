@@ -1,44 +1,110 @@
 // src/pages/EducationAchievements.js
-import React, { useContext } from 'react';
-import './EducationAchievements.css';
+import React from "react";
+import "./EducationAchievements.css";
 
 const EducationAchievements = ({ darkMode }) => {
-    const education = {
-        degree: "Bachelor's",
-        fieldOfStudy: "Computer Science",
-        university: "ABC University"
-    };
-
-    const achievements = [
+    const educations = [
         {
-            name: "Successfully deployed a scalable e-commerce platform",
-            description: "The platform handled a high volume of traffic and resulted in a significant increase in sales."
+            degree: "GED",
+            institution: "Harper College",
+            year: "2009",
         },
         {
-            name: "Developed an AI chatbot",
-            description: "Created a chatbot using state-of-the-art NLP techniques that improved customer service efficiency."
-        }
+            degree: "A+ Certification",
+            institution: "Oakton Community College",
+            year: "2013-2014",
+        },
+    ];
+
+    const certifications = [
+        {
+            name: "HTML, CSS, JavaScript, React Fundamentals",
+            institution: "Codecademy.com",
+            year: "Ongoing since 2021",
+        },
+        {
+            name: "Full Stack Web Development",
+            institution: "Lambda School",
+            year: "2021",
+        },
+        {
+            name: "Full Stack Web Development Junior Web Dev",
+            institution: "App Academy",
+            year: "Ongoing since 2021",
+        },
+    ];
+
+    const skills = [
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "Ruby",
+        "Python",
+        "React",
+        "SQL",
+    ];
+
+    const projects = [
+        {
+            name: "PeerThruPeer Model",
+            description:
+                "Developed the 'PeerThruPeer' model for effective efficiency training, resulting in increased sales and decreased complaints.",
+        },
     ];
 
     return (
-        <div className={`page-container ${darkMode ? "dark-mode" : "light-mode"}`}>
+        <div className={`page-container ${darkMode ? "dark-mode" : ""}`}>
             <div className="education-achievements">
                 <h1>Education</h1>
-                <div className="education-item">
-                    <p><strong>Degree:</strong> {education.degree}</p>
-                    <p><strong>Field of study:</strong> {education.fieldOfStudy}</p>
-                    <p><strong>University:</strong> {education.university}</p>
-                </div>
+                {educations.map((edu, index) => (
+                    <div key={index} className="education-item">
+                        <p>
+                            <strong>Degree:</strong> {edu.degree}
+                        </p>
+                        <p>
+                            <strong>Institution:</strong> {edu.institution}
+                        </p>
+                        <p>
+                            <strong>Year:</strong> {edu.year}
+                        </p>
+                    </div>
+                ))}
 
-                <h1>Achievements</h1>
-                <div>
-                    {achievements.map((achievement, index) => (
-                        <div key={index} className="achievement-item">
-                            <p><strong>Achievement name:</strong> {achievement.name}</p>
-                            <p><strong>Description:</strong> {achievement.description}</p>
-                        </div>
+                <h1>Certifications</h1>
+                {certifications.map((cert, index) => (
+                    <div key={index} className="certification-item">
+                        <p>
+                            <strong>Certification:</strong> {cert.name}
+                        </p>
+                        <p>
+                            <strong>Institution:</strong> {cert.institution}
+                        </p>
+                        <p>
+                            <strong>Year:</strong> {cert.year}
+                        </p>
+                    </div>
+                ))}
+
+                <h1>Skills</h1>
+                <div className="skills-list">
+                    {skills.map((skill, index) => (
+                        <span key={index} className="skill-item">
+                            {skill}
+                        </span>
                     ))}
                 </div>
+
+                <h1>Notable Projects</h1>
+                {projects.map((project, index) => (
+                    <div key={index} className="project-item">
+                        <p>
+                            <strong>Project name:</strong> {project.name}
+                        </p>
+                        <p>
+                            <strong>Description:</strong> {project.description}
+                        </p>
+                    </div>
+                ))}
             </div>
         </div>
     );

@@ -1,87 +1,109 @@
-/* src/pages/EducationAchievements.css */
-
-.education-achievements {
-    max-width: 800px;
+/* General styles for the Education Achievements page */
+.education-achievements-container {
+    max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
-    text-align: center;
 }
 
-.light-mode .education-achievements {
-    background-color: #ffffff;
+.education-achievements-header {
     color: #333;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.dark-mode .education-achievements {
-    background-color: #2c2c2c;
-    color: #f0f0f0;
-    box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1);
-}
-
-h1 {
-    padding-bottom: 10px;
-    margin-top: 30px;
-    margin-bottom: 20px;
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
     text-align: center;
 }
 
-.light-mode h1 {
-    color: #0077b6;
-    border-bottom: 2px solid #0077b6;
+.education-achievements-list {
+    list-style-type: none;
+    padding: 0;
 }
 
-.dark-mode h1 {
-    color: #4db5ff;
-    border-bottom: 2px solid #4db5ff;
-}
-
-.education-item, .achievement-item {
-    margin-bottom: 20px;
+.education-achievements-item {
+    background-color: #fff;
+    margin-bottom: 15px;
     padding: 15px;
-    border-radius: 5px;
-    text-align: left;
+    border-left: 5px solid #4285F4;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
 }
 
-.light-mode .education-item, .light-mode .achievement-item {
-    background-color: #f8f9fa;
+.education-achievements-item:hover {
+    transform: translateY(-5px);
 }
 
-.dark-mode .education-item, .dark-mode .achievement-item {
-    background-color: #3a3a3a;
+.education-achievements-date {
+    color: #999;
+    font-size: 0.9rem;
+    margin-bottom: 5px;
 }
 
-.education-item p, .achievement-item p {
-    margin: 5px 0;
+.education-achievements-title {
+    color: #333;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 5px;
 }
 
-.light-mode strong {
-    color: #0077b6;
+.education-achievements-description {
+    color: #666;
+    font-size: 1rem;
+    line-height: 1.6;
 }
-
-.dark-mode strong {
-    color: #4db5ff;
-}
-
-.light-mode .achievement-item:nth-child(even) {
-    background-color: #e9ecef;
-}
-
-.dark-mode .achievement-item:nth-child(even) {
-    background-color: #444444;
-}
-
-@media (max-width: 600px) {
-    .education-achievements {
+/* Media query for smaller screens */
+@media (max-width: 768px){
+    .education-achievements-container {
         padding: 10px;
-    }
 
-    h1 {
-        font-size: 24px;
     }
+    .education-achievements-header {
+        font-size: 2rem;
 
-    .education-item, .achievement-item {
+    }
+    .education-achievements-item {
         padding: 10px;
+
     }
+    .education-achievements-title {
+        font-size: 1.2rem;
+
+    }
+    .education-achievements-description {
+        font-size: 0.9rem;
+
+    }
+
+    
 }
+/* Media query for even smaller screens */
+@media (max-width: 480px
+        /* src/pages/EducationAchievements.css */
+
+        .education-achievements h1 {
+            margin-top: 2rem;
+        }
+
+        .education-item, .certification-item, .project-item {
+            margin-bottom: 1rem;
+            padding: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .skill-item {
+            background-color: #f0f0f0;
+            padding: 0.5rem;
+            border-radius: 3px;
+        }
+
+        .dark-mode .skill-item {
+            background-color: #333;
+        }
