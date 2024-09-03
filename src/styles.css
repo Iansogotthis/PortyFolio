@@ -29,13 +29,14 @@ body {
 }
 .dark-mode {
   --text-color: #ffffff;
-  --background-color: #000000; /* Changed to black */
-  --background-light: #111111; /* Slightly lighter than black for contrast */
-  --card-bg: #21a1f1; /* Blue background for cards, as in Projects.js */
+  --background-color: #000000;
+  --background-light: #111111;
+  --card-bg: rgba(79, 99, 118, .9);
   --card-text: #ffffff;
   --card-text-secondary: #cccccc;
-  --footer-bg: #1a1a1a; /* Dark grey for footer */
-  --header-color: #ffffff;  /* White for headers in dark mode */
+  --footer-bg: #1a1a1a;
+  --header-color: #ffffff;
+  --card-border: #444444;
 }
 h1, h2, h3, h4, h5, h6 {
   color: var(--header-color);
@@ -408,3 +409,4 @@ a:hover {
 .dark-mode .footer-container {
   background-color: var(--footer-bg);
 }
+

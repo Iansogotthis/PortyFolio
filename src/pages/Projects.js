@@ -1,18 +1,35 @@
-// src/pages/Projects.js
 import React from "react";
 import "./Projects.css";
-
+import checkersImage from "../images/checkers.jpg";
+import postPiece from "../images/vibetime.jpg";
+import rpsImg from "../images/rps.jpg";
+import destination from "../images/destination.jpg";
 // ProjectCard Component
-const ProjectCard = ({ title, imageSrc, altText, description, links }) => (
+const ProjectCard = ({
+  title,
+  imageSrc,
+  altText,
+  description,
+  links,
+  darkMode,
+}) => (
   <div className="project-card">
     <h2>{title}</h2>
-    <img src={imageSrc} alt={altText} />
+    <img src = {imageSrc} alt={altText} />
     {typeof description === "string" ? <p>{description}</p> : description}
-    {links.map((link, index) => (
-      <a key={index} href={link.href} target="_blank" rel="noopener noreferrer">
-        {link.text}
-      </a>
-    ))}
+    <div className="button-container">
+      {links.map((link, index) => (
+        <a
+          key={index}
+          href={link.href}
+          target="_blank"
+          rel="noopener noreferrer"
+          className={`project-link ${darkMode ? "dark-mode" : ""}`}
+        >
+          {link.text}
+        </a>
+      ))}
+    </div>
   </div>
 );
 
@@ -21,7 +38,7 @@ const Projects = ({ darkMode }) => {
   const projectData = [
     {
       title: "Checkers Game",
-      imageSrc: "./images/checkers.png",
+      imageSrc: checkersImage,
       altText: "Checkers Game Screenshot",
       description: "This project is a JavaScript Checkers Game.",
       links: [
@@ -37,7 +54,7 @@ const Projects = ({ darkMode }) => {
     },
     {
       title: "Rock Paper Scissors",
-      imageSrc: "path/to/screenshot2.png",
+      imageSrc: rpsImg,
       altText: "Rock Paper Scissors Screenshot",
       description: (
         <>
@@ -62,7 +79,7 @@ const Projects = ({ darkMode }) => {
     },
     {
       title: "Social Media Site",
-      imageSrc: "path/to/screenshot3.png",
+      imageSrc: postPiece,
       altText: "Social Media Site Screenshot",
       description: (
         <>
@@ -88,14 +105,12 @@ const Projects = ({ darkMode }) => {
     },
     {
       title: "Destination",
-      imageSrc: "path/to/screenshot4.png",
+      imageSrc: destination,
       altText: "Task Management Tool Screenshot",
       description: (
         <>
           <p>
-            A task management tool built with React and Firebase. It allows
-            users to create, edit, and delete tasks, and track their progress
-            with a user-friendly interface.
+          Django-based travel platform showcasing restaurants and hotels worldwide. Features user profiles, photo galleries, and activity listings. Implemented with Python, HTML/CSS, JavaScript, and Bootstrap. Demonstrates full-stack development skills, database management, and responsive design.
           </p>
         </>
       ),
@@ -109,7 +124,8 @@ const Projects = ({ darkMode }) => {
     },
     {
       title: "Personal Blog",
-      imageSrc: "path/to/screenshot5.png",
+      imageSrc:
+        "https://drive.google.com/uc?export=view&id=YOUR_GOOGLE_DRIVE_IMAGE_ID_FOR_BLOG",
       altText: "Personal Blog Screenshot",
       description: (
         <>
@@ -129,7 +145,7 @@ const Projects = ({ darkMode }) => {
       <h1>My Projects</h1>
       <div className="projects-grid">
         {projectData.map((project, index) => (
-          <ProjectCard key={index} {...project} />
+          <ProjectCard key={index} {...project} darkMode={darkMode} />
         ))}
       </div>
     </div>
