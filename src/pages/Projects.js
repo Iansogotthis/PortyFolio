@@ -4,7 +4,6 @@ import checkersImage from "../images/checkers.jpg";
 import postPiece from "../images/vibetime.jpg";
 import rpsImg from "../images/rps.jpg";
 import destination from "../images/destination.jpg";
-
 // ProjectCard Component
 const ProjectCard = ({
   title,
@@ -16,7 +15,7 @@ const ProjectCard = ({
 }) => (
   <div className="project-card">
     <h2>{title}</h2>
-    <img src={imageSrc} alt={altText} />
+    <img src = {imageSrc} alt={altText} />
     {typeof description === "string" ? <p>{description}</p> : description}
     <div className="button-container">
       {links.map((link, index) => (
