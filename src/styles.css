@@ -162,7 +162,7 @@
   background-color: #ffffff;
   color: var(--primary-color);
 }
-/* Light mode specific styles */]
+/* Light mode specific styles */
 .footer-container:not(.dark-mode){
   background-color: var(--primary-color)
   
@@ -199,7 +199,7 @@ body {
 .dark-mode {
   --text-color: #ffffff;
   --background-color: #000000;
-  --background-light: #111111;
+  --background-light: #000000;
   --card-bg: rgba(79, 99, 118, .9);
   --card-text: #ffffff;
   --card-text-secondary: #cccccc;
@@ -603,5 +603,6 @@ a:hover {
   
 .dark-mode .footer-icon:hover{
   color: var(--footer-link-hover);
-  
 }
+
+  

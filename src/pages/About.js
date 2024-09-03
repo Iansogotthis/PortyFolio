@@ -1,7 +1,7 @@
 // src/pages/About.js
 import React, { useState } from 'react';
 import './About.css';
-
+import myselfImage from '../images/myself.jpg';  
 function About({ darkMode }) {
   const [hoveredSkill, setHoveredSkill] = useState(null);
 
@@ -15,6 +15,7 @@ function About({ darkMode }) {
     <div className={`page-container ${darkMode ? "dark-mode" : ""}`}>
       <div className="about-container">
         <section className="intro-section">
+          <img src={myselfImage} alt="Ian Mount" className="profile-image" />
           <h1>About Me</h1>
           <p>Hello! I'm Ian Mount, a passionate web developer based in Hyde Park, Chicago. My journey into web development began after a long career in management within the food service industry, where I honed my skills in leadership, problem-solving, and project management.</p>
           <p>My transition into tech has been fueled by a love for creating minimalist, modern web applications that are both functional and aesthetically pleasing. I'm committed to continuous learning and have completed various certifications to deepen my expertise in full-stack development.</p>
