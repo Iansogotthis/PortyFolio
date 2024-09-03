@@ -1,6 +1,9 @@
-// src/pages/Projects.js
 import React from "react";
 import "./Projects.css";
+import checkersImage from "../images/checkers.jpg";
+import postPiece from "../images/vibetime.jpg";
+import rpsImg from "../images/rps.jpg";
+import destination from "../images/destination.jpg";
 
 // ProjectCard Component
 const ProjectCard = ({
@@ -36,7 +39,7 @@ const Projects = ({ darkMode }) => {
   const projectData = [
     {
       title: "Checkers Game",
-      imageSrc:"./images/checkers.jpg",
+      imageSrc: checkersImage,
       altText: "Checkers Game Screenshot",
       description: "This project is a JavaScript Checkers Game.",
       links: [
@@ -52,8 +55,7 @@ const Projects = ({ darkMode }) => {
     },
     {
       title: "Rock Paper Scissors",
-      imageSrc:
-        "https://drive.google.com/uc?export=view&id=YOUR_GOOGLE_DRIVE_IMAGE_ID_FOR_RPS",
+      imageSrc: rpsImg,
       altText: "Rock Paper Scissors Screenshot",
       description: (
         <>
@@ -78,8 +80,7 @@ const Projects = ({ darkMode }) => {
     },
     {
       title: "Social Media Site",
-      imageSrc:
-        "https://drive.google.com/uc?export=view&id=YOUR_GOOGLE_DRIVE_IMAGE_ID_FOR_SOCIAL_MEDIA",
+      imageSrc: postPiece,
       altText: "Social Media Site Screenshot",
       description: (
         <>
@@ -105,15 +106,12 @@ const Projects = ({ darkMode }) => {
     },
     {
       title: "Destination",
-      imageSrc:
-        "https://drive.google.com/uc?export=view&id=YOUR_GOOGLE_DRIVE_IMAGE_ID_FOR_DESTINATION",
+      imageSrc: destination,
       altText: "Task Management Tool Screenshot",
       description: (
         <>
           <p>
-            A task management tool built with React and Firebase. It allows
-            users to create, edit, and delete tasks, and track their progress
-            with a user-friendly interface.
+          Django-based travel platform showcasing restaurants and hotels worldwide. Features user profiles, photo galleries, and activity listings. Implemented with Python, HTML/CSS, JavaScript, and Bootstrap. Demonstrates full-stack development skills, database management, and responsive design.
           </p>
         </>
       ),
