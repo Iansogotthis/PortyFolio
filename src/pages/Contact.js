@@ -1,112 +1,79 @@
+// src/pages/Contact.js
 import React, { useState } from 'react';
+import './Contact.css';
 
-function Contact() {
+function Contact({ darkMode }) {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    message: '',
+    message: ''
   });
 
-  const [responseMessage, setResponseMessage] = useState('');
-
   const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    const form = e.target;
-
-    try {
-      const response = await fetch('https://formspree.io/f/mqkrwqzn', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          name: formData.name,
-          email: formData.email,
-          message: formData.message,
-        }),
-      });
-
-      if (response.ok) {
-        setResponseMessage('Thank you for your message! I will get back to you soon.');
-        form.reset();
-      } else {
-        setResponseMessage('Oops! Something went wrong. Please try again later.');
-      }
-    } catch (error) {
-      setResponseMessage('Error sending message. Please try again later.');
-    }
+    console.log('Form submitted:', formData);
+    setFormData({ name: '', email: '', message: '' });
   };
 
   return (
-    <section id="contact">
-      <h2 style={{ textAlign: 'center' }}>Get in Touch</h2>
-      <br />
+    <div className={`page-container ${darkMode ? "dark-mode" : ""}`}>
+      <div className="contact-container">
+        <h1>Contact Me</h1>
+        <p>I'd love to hear from you! Whether you have a question or just want to say hi, feel free to drop me a message.</p>
 
-      <ul className="contact-links">
-        <li>
-          <a href="https://github.com/Iansogotthis">
-            GitHub
-            <img src="/images/git.jpg" alt="GitHub Logo" style={{ width: '16px', height: '16px' }} />
-          </a>
-        </li>
-        <li>
-          <a href="http://www.linkedin.com/in/webdevwonder88">
-            LinkedIn
-            <img src="/images/linkd.png" alt="LinkedIn Logo" style={{ width: '16px', height: '16px' }} />
-          </a>
-        </li>
-      </ul>
-      <br />
+        <div className="contact-card">
+          <h2>Send a Message</h2>
+          <form className="contact-form" onSubmit={handleSubmit}>
+            <div className="form-group">
+              <label htmlFor="name">Name:</label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                value={formData.name}
+                onChange={handleChange}
+                required
+              />
+            </div>
+            <div className="form-group">
+              <label htmlFor="email">Email:</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
+                required
+              />
+            </div>
+            <div className="form-group">
+              <label htmlFor="message">Message:</label>
+              <textarea
+                id="message"
+                name="message"
+                value={formData.message}
+                onChange={handleChange}
+                required
+              ></textarea>
+            </div>
+            <button type="submit" className="submit-button">Send Message</button>
+          </form>
+        </div>
 
-      <div id="responseMessage">{responseMessage && <p>{responseMessage}</p>}</div>
-
-      <form className="contact-form" id="contactForm" onSubmit={handleSubmit}>
-        <label htmlFor="name">Name:</label>
-        <input
-          style={{ textAlign: 'center', border: '2px solid white' }}
-          type="text"
-          id="name"
-          name="name"
-          className="feedback-input"
-          placeholder="Name"
-          value={formData.name}
-          onChange={handleChange}
-          required
-        />
-
-        <label htmlFor="email">Email:</label>
-        <input
-          style={{ textAlign: 'center', border: '2px solid white' }}
-          type="email"
-          id="email"
-          name="email"
-          className="feedback-input"
-          placeholder="Email"
-          value={formData.email}
-          onChange={handleChange}
-          required
-        />
-
-        <label htmlFor="message">Message:</label>
-        <textarea
-          style={{ textAlign: 'center', border: '2px solid white' }}
-          id="message"
-          name="message"
-          className="feedback-input"
-          placeholder="Comment"
-          value={formData.message}
-          onChange={handleChange}
-          required
-        />
-
-        <button type="submit" className="submit-button">Send Message</button>
-      </form>
-    </section>
+        <div className="contact-card">
+          <h2>Other Ways to Connect</h2>
+          <ul className="contact-info">
+            <li>Email: ian.mount@example.com</li>
+            <li>LinkedIn: <a href="https://www.linkedin.com/in/ianmount" target="_blank" rel="noopener noreferrer">linkedin.com/in/ianmount</a></li>
+            <li>GitHub: <a href="https://github.com/ianmount" target="_blank" rel="noopener noreferrer">github.com/ianmount</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
   );
 }
 
