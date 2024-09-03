@@ -3,7 +3,7 @@
   margin: 0 auto;
   height: auto;
   padding: 20px;
-  background-color: var(--background-light);
+  background-color: rgb(121, 151, 140);
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(80, 63, 118, .9);
   transition: background-color 0.3s ease, color 0.3s ease;
@@ -15,7 +15,7 @@
 }
 
 .page-container.dark-mode {
-  background-color: var(--primary-color);
+  background-color: rgb(121, 151, 140)
 }
 
 .projects-grid {
