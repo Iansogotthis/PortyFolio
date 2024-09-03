@@ -3,16 +3,31 @@ import React from "react";
 import "./Projects.css";
 
 // ProjectCard Component
-const ProjectCard = ({ title, imageSrc, altText, description, links }) => (
+const ProjectCard = ({
+  title,
+  imageSrc,
+  altText,
+  description,
+  links,
+  darkMode,
+}) => (
   <div className="project-card">
     <h2>{title}</h2>
     <img src={imageSrc} alt={altText} />
     {typeof description === "string" ? <p>{description}</p> : description}
-    {links.map((link, index) => (
-      <a key={index} href={link.href} target="_blank" rel="noopener noreferrer">
-        {link.text}
-      </a>
-    ))}
+    <div className="button-container">
+      {links.map((link, index) => (
+        <a
+          key={index}
+          href={link.href}
+          target="_blank"
+          rel="noopener noreferrer"
+          className={`project-link ${darkMode ? "dark-mode" : ""}`}
+        >
+          {link.text}
+        </a>
+      ))}
+    </div>
   </div>
 );
 
@@ -21,7 +36,7 @@ const Projects = ({ darkMode }) => {
   const projectData = [
     {
       title: "Checkers Game",
-      imageSrc: "./images/checkers.png",
+      imageSrc:"./images/checkers.jpg",
       altText: "Checkers Game Screenshot",
       description: "This project is a JavaScript Checkers Game.",
       links: [
@@ -37,7 +52,8 @@ const Projects = ({ darkMode }) => {
     },
     {
       title: "Rock Paper Scissors",
-      imageSrc: "path/to/screenshot2.png",
+      imageSrc:
+        "https://drive.google.com/uc?export=view&id=YOUR_GOOGLE_DRIVE_IMAGE_ID_FOR_RPS",
       altText: "Rock Paper Scissors Screenshot",
       description: (
         <>
@@ -62,7 +78,8 @@ const Projects = ({ darkMode }) => {
     },
     {
       title: "Social Media Site",
-      imageSrc: "path/to/screenshot3.png",
+      imageSrc:
+        "https://drive.google.com/uc?export=view&id=YOUR_GOOGLE_DRIVE_IMAGE_ID_FOR_SOCIAL_MEDIA",
       altText: "Social Media Site Screenshot",
       description: (
         <>
@@ -88,7 +105,8 @@ const Projects = ({ darkMode }) => {
     },
     {
       title: "Destination",
-      imageSrc: "path/to/screenshot4.png",
+      imageSrc:
+        "https://drive.google.com/uc?export=view&id=YOUR_GOOGLE_DRIVE_IMAGE_ID_FOR_DESTINATION",
       altText: "Task Management Tool Screenshot",
       description: (
         <>
@@ -109,7 +127,8 @@ const Projects = ({ darkMode }) => {
     },
     {
       title: "Personal Blog",
-      imageSrc: "path/to/screenshot5.png",
+      imageSrc:
+        "https://drive.google.com/uc?export=view&id=YOUR_GOOGLE_DRIVE_IMAGE_ID_FOR_BLOG",
       altText: "Personal Blog Screenshot",
       description: (
         <>
@@ -129,7 +148,7 @@ const Projects = ({ darkMode }) => {
       <h1>My Projects</h1>
       <div className="projects-grid">
         {projectData.map((project, index) => (
-          <ProjectCard key={index} {...project} />
+          <ProjectCard key={index} {...project} darkMode={darkMode} />
         ))}
       </div>
     </div>

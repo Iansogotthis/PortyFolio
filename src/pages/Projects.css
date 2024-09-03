@@ -4,15 +4,19 @@
 .page-container {
   max-width: 1200px;
   margin: 0 auto;
+  height: auto;
   padding: 20px;
   background-color: var(--background-light);
   border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 8px rgba(80, 63, 118, .9);
   transition: background-color 0.3s ease, color 0.3s ease;
+  
 }
 
 .page-container.light-mode {
   background-color: var(--background-light);
+  color: var(--text-color);
+  
 }
 
 .page-container.dark-mode {
@@ -118,11 +122,11 @@
 .light-mode {
   --background-color: #ffffff;
   --text-color: #333333;
-  --card-background: #f9f9f9;
+  --card-background:  rgba(79, 99, 118, .9);
   --card-border-color: #dddddd;
   --link-color: #007bff;
   --link-hover-color: #0056b3;
-  --button-background: #007bff;
+  --button-background: rgb(0, 0, 0);
   --button-text: #ffffff;
   --button-hover-background: #0056b3;
 }
@@ -151,3 +155,54 @@ h6 {
   margin-left: auto;
   margin-right: auto;
 }
+
+/* Centering All Paragraphs format the text appealingly as well as the buttons */
+p{
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+/* styling View on github and play it etc */
+.github-link{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  background-color: grey;
+}
+
+
+/* src/pages/Projects.css */
+
+.project-link {
+  /* Almond white */
+  background-color: alm;
+  border-radius: 8px;
+  color: #1c1c1c;
+  padding: 10px;
+
+  text-decoration: none;
+  margin: 5px;
+  display: inline-block;
+  transition: background-color 0.3s ease;
+}
+
+.project-link:hover {
+  border: 2px solid #1c1c1c;
+  background-color: #D3BBA3; /* Darker shade of almond */
+}
+
+.project-link.dark-mode {
+  background-color: #808080; /* Grey */
+  color: #ffffff;
+
+}
+
+.project-link.dark-mode:hover {
+  border: 2px solid #1c1c1c;
+  background-color: #A9A9A9; /* Lighter shade of grey */
+}
+
+/* Rest of your existing CSS styles ... */

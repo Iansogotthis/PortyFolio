@@ -18,7 +18,7 @@
   border-radius: 8px;
   padding: 20px;
   margin-bottom: 30px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 8px rgba(80, 63, 118, .9);
   transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 }
 
@@ -40,7 +40,8 @@
 .form-group label {
   display: block;
   margin-bottom: 5px;
-  color: var(--card-text);
+  color: white; /* Changed from var(--card-text) to ensure visibility */
+  font-weight: bold; /* Added for better visibility */
 }
 
 .form-group input,
@@ -49,7 +50,8 @@
   padding: 10px;
   border: 1px solid var(--card-border);
   border-radius: 4px;
-  background-color: var(--background-color);
+  background-color: white;
+
   color: var(--text-color);
 }
 
@@ -58,7 +60,7 @@
 }
 
 .submit-button {
-  background-color: var(--secondary-color);
+  background-color:  rgba(79, 99, 118, .9);
   color: var(--background-color);
   border: none;
   padding: 10px 20px;
@@ -109,7 +111,7 @@
 }
 
 .dark-mode .form-group label {
-  color: var(--card-text);
+  color: var(--card-text); /* Ensures visibility in dark mode */
 }
 
 .dark-mode .form-group input,
