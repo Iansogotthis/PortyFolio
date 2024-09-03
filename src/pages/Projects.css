@@ -1,6 +1,3 @@
-/* src/pages/Projects.css */
-
-/* General Page Container Styling */
 .page-container {
   max-width: 1200px;
   margin: 0 auto;
@@ -10,32 +7,26 @@
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(80, 63, 118, .9);
   transition: background-color 0.3s ease, color 0.3s ease;
-  
 }
 
 .page-container.light-mode {
   background-color: var(--background-light);
   color: var(--text-color);
-  
 }
 
 .page-container.dark-mode {
   background-color: var(--primary-color);
 }
 
-/* Projects Grid Layout */
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 20px;
   margin-top: 20px;
   justify-content: center;
-  /* Centers the grid items horizontally */
   grid-auto-flow: row dense;
-  /* Ensures items fill up space optimally */
 }
 
-/* Project Card Styling */
 .project-card {
   background-color: var(--card-background);
   border: 1px solid var(--card-border-color);
@@ -48,7 +39,6 @@
   transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
   color: var(--text-color);
   height: 100%;
-  /* Ensures all cards are the same height */
 }
 
 .project-card:hover {
@@ -56,7 +46,6 @@
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
 }
 
-/* Project Title Styling */
 .project-card h2 {
   margin-top: 0;
   font-size: 1.5rem;
@@ -64,7 +53,6 @@
   text-align: center;
 }
 
-/* Project Image Styling */
 .project-card img {
   max-width: 100%;
   height: auto;
@@ -72,17 +60,14 @@
   margin-bottom: 15px;
 }
 
-/* Project Description Styling */
 .project-card p {
   font-size: 1rem;
   color: var(--text-color);
   line-height: 1.5;
   margin-bottom: 15px;
   flex-grow: 1;
-  /* Ensures that descriptions can grow to fill space */
 }
 
-/* GitHub Link Styling */
 .project-card a {
   display: inline-block;
   padding: 10px 15px;
@@ -92,14 +77,12 @@
   border-radius: 4px;
   transition: background-color 0.2s ease-in-out;
   align-self: center;
-  /* Centers the button horizontally at the bottom of the card */
 }
 
 .project-card a:hover {
   background-color: var(--button-hover-background);
 }
 
-/* Toggle Button Styling */
 .toggle-button {
   background-color: var(--button-background);
   color: var(--button-text);
@@ -111,14 +94,12 @@
   display: block;
   margin-left: auto;
   margin-right: auto;
-  /* Centers the toggle button horizontally on the page */
 }
 
 .toggle-button:hover {
   background-color: var(--button-hover-background);
 }
 
-/* Light Mode Styling */
 .light-mode {
   --background-color: #ffffff;
   --text-color: #333333;
@@ -131,7 +112,6 @@
   --button-hover-background: #0056b3;
 }
 
-/* Dark Mode Styling */
 .dark-mode {
   --background-color: #1c1c1c;
   --text-color: #e0e0e0;
@@ -144,28 +124,21 @@
   --button-hover-background: #21a1f1;
 }
 
-/* Centering All Headings */
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h1, h2, h3, h4, h5, h6 {
   text-align: center;
   margin-left: auto;
   margin-right: auto;
 }
 
-/* Centering All Paragraphs format the text appealingly as well as the buttons */
-p{
+p {
   text-align: center;
   margin-left: auto;
   margin-right: auto;
   font-size: 1.2rem;
   line-height: 1.6;
 }
-/* styling View on github and play it etc */
-.github-link{
+
+.github-link {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -173,16 +146,11 @@ p{
   background-color: grey;
 }
 
-
-/* src/pages/Projects.css */
-
 .project-link {
-  /* Almond white */
-  background-color: alm;
+  background-color: almond;
   border-radius: 8px;
   color: #1c1c1c;
   padding: 10px;
-
   text-decoration: none;
   margin: 5px;
   display: inline-block;
@@ -191,18 +159,15 @@ p{
 
 .project-link:hover {
   border: 2px solid #1c1c1c;
-  background-color: #D3BBA3; /* Darker shade of almond */
+  background-color: #D3BBA3;
 }
 
 .project-link.dark-mode {
-  background-color: #808080; /* Grey */
+  background-color: #808080;
   color: #ffffff;
-
 }
 
 .project-link.dark-mode:hover {
   border: 2px solid #1c1c1c;
-  background-color: #A9A9A9; /* Lighter shade of grey */
+  background-color: #A9A9A9;
 }
-
-/* Rest of your existing CSS styles ... */

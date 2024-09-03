@@ -15,7 +15,7 @@ const ProjectCard = ({
 }) => (
   <div className="project-card">
     <h2>{title}</h2>
-    <img src = {imageSrc} alt={altText} />
+    <img src={imageSrc} alt={altText} />
     {typeof description === "string" ? <p>{description}</p> : description}
     <div className="button-container">
       {links.map((link, index) => (
@@ -58,12 +58,14 @@ const Projects = ({ darkMode }) => {
       altText: "Rock Paper Scissors Screenshot",
       description: (
         <>
-          <p>A simple HTML/CSS/JS Rock Paper Scissors variation featuring:</p>
-          <ol>
-            <li>A clean, simple, and intuitive interface</li>
-            <li>Random computer move generation</li>
-            <li>Outcome display for each round</li>
-          </ol>
+          <p>
+            A simple HTML/CSS/JS Rock Paper Scissors variation featuring:
+            <ol>
+              <li>A clean, simple, and intuitive interface</li>
+              <li>Random computer move generation</li>
+              <li>Outcome display for each round</li>
+            </ol>
+          </p>
         </>
       ),
       links: [
@@ -110,7 +112,11 @@ const Projects = ({ darkMode }) => {
       description: (
         <>
           <p>
-          Django-based travel platform showcasing restaurants and hotels worldwide. Features user profiles, photo galleries, and activity listings. Implemented with Python, HTML/CSS, JavaScript, and Bootstrap. Demonstrates full-stack development skills, database management, and responsive design.
+            Django-based travel platform showcasing restaurants and hotels
+            worldwide. Features user profiles, photo galleries, and activity
+            listings. Implemented with Python, HTML/CSS, JavaScript, and
+            Bootstrap. Demonstrates full-stack development skills, database
+            management, and responsive design.
           </p>
         </>
       ),
