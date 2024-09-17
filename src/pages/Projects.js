@@ -4,6 +4,7 @@ import checkersImage from "../images/checkers.jpg";
 import postPiece from "../images/vibetime.jpg";
 import rpsImg from "../images/rps.jpg";
 import destination from "../images/destination.jpg";
+import whackImg from "../images/whack.png";
 // ProjectCard Component
 const ProjectCard = ({
   title,
@@ -129,20 +130,27 @@ const Projects = ({ darkMode }) => {
       ],
     },
     {
-      title: "Personal Blog",
-      imageSrc:
-        "https://drive.google.com/uc?export=view&id=YOUR_GOOGLE_DRIVE_IMAGE_ID_FOR_BLOG",
+      title: "Whack A Mole",
+      imageSrc:whackImg,
       altText: "Personal Blog Screenshot",
       description: (
         <>
           <p>
-            A personal blog built with Gatsby and GraphQL. It features a clean,
-            responsive design and allows me to easily publish and manage blog
-            posts.
+          
+            Whack-a-Mole is a Python game implemented using the pygame library. In this game, the player uses a mallet to hit moles that pop up from holes in a grid. The player scores points for each mole hit, and the game gets progressively harder as the moles appear and disappear more quickly. The main features include:
+            <ol>
+              <li>Interactive gameplay with increasing difficulty</li>
+              <li>Score tracking and high score saving</li>
+              <li>Colorful graphics and animations</li>
+              
+            </ol>
           </p>
         </>
       ),
-      links: [{ href: "link-to-project-repo", text: "View on GitHub" }],
+      links: [{ href: "https://github.com/Iansogotthis/whackAmole", text: "View on GitHub" },
+              { href: "https://oholeymoley.replit.app/", text: "Play It" }
+             ],
+      
     },
   ];
 
